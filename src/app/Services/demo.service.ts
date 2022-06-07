@@ -10,7 +10,8 @@ export class DemoService {
   private baseURL="http://localhost:8099/api/demo/getall";
   constructor(private httpclient : HttpClient)
    {}
-    getDemoList(): Observable<Demo[]>{
+
+  getDemoList(): Observable<Demo[]>{
       return  this.httpclient.get<Demo[]>(`${this.baseURL}`);
   }
 

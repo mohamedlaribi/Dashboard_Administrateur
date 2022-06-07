@@ -20,7 +20,18 @@ export class ModulesService {
     return this.httpclient.get<Modules[]>(`${this.getURL}`);
   }
 
-
-  
-
+  private editURl="http://localhost:8099/api/modules/";
+  updatemodule(idmodule : number , modules : Modules): Observable<Object>
+  {
+    return this.httpclient.put(`${this.editURl}`+idmodule,modules);
+  }
+  private getbyIdURl="http://localhost:8099/api/modules/";
+  getDemoById(idmodule : number) : Observable<Modules>{
+    return this.httpclient.get<Modules>(`${this.getbyIdURl}`+idmodule);
+  }
+  private deleteURL="http://localhost:8099/api/modules/";
+  deleteModule(idmodule : number ): Observable<Object>
+  {
+    return this.httpclient.delete(`${this.deleteURL}`+idmodule);
+  }
 }

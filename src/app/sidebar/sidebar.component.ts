@@ -10,14 +10,21 @@ export interface RouteInfo {
 
 export const ROUTES: RouteInfo[] = [
     { path: '/dashboard',     title: 'Dashboard',         icon:'nc-bank',       class: '' },
-    { path: '/demo',          title: 'Gestion Demo',  icon:'nc-diamond',    class: '' },
-    { path: '/addmodule',     title: 'Gestion des Modules',       icon:'nc-diamond',    class: '' },
-    { path: '/maps',          title: 'Maps',              icon:'nc-pin-3',      class: '' },
-    { path: '/notifications', title: 'Notifications',     icon:'nc-bell-55',    class: '' },
-    { path: '/user',          title: 'User Profile',      icon:'nc-single-02',  class: '' },
-    { path: '/table',         title: 'Table List',        icon:'nc-tile-56',    class: '' },
-    { path: '/typography',    title: 'Typography',        icon:'nc-caps-small', class: '' },
-    { path: '/upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
+    { path: '/demo',          title: 'Gestion Demo',  icon:'nc-badge',    class: '' },
+    { path: '/allmodules',    title: 'Gestion des Modules',       icon:'nc-layout-11',    class: '' },
+    {path:  '/list-prix', title :'Paramètrage des prix' ,icon:'nc-settings-gear-65', class: '' },
+    {path:  '/list-periode-payement', title:'Periode Payement',icon:'nc-paper', class: ''},
+    {path:  '#', title:'Gestion des Devis',icon:'nc-money-coins', class: ''},    
+    {path:  '#', title:'Gestion Des Achats ',icon:'nc-chart-bar-32', class: ''}
+
+
+
+    //{ path: '/maps',          title: 'Maps',              icon:'nc-pin-3',      class: '' },
+   // { path: '/notifications', title: 'Notifications',     icon:'nc-bell-55',    class: '' },
+    //{ path: '/user',          title: 'User Profile',      icon:'nc-single-02',  class: '' },
+    //{ path: '/table',         title: 'Table List',        icon:'nc-tile-56',    class: '' },
+    //{ path: '/typography',    title: 'Typography',        icon:'nc-caps-small', class: '' },
+    //{ path: '/upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
 ];
 
 @Component({

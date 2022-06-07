@@ -11,6 +11,8 @@ import { DemoService } from 'app/Services/demo.service';
 export class DemoComponent implements OnInit {
 
   demonstration : Demo[];
+  nom:string;
+  email : string ;
 
   constructor(private demoService : DemoService,
     private router: Router) { }
@@ -35,5 +37,17 @@ export class DemoComponent implements OnInit {
       this.getDemo()
     })
   }
+
+  Search(){
+    if(this.email != ""){
+      this.demonstration =this.demonstration.filter(res=>{
+        return res.email.toLocaleLowerCase().match(this.email.toLocaleLowerCase())
+      });
+    }else if(this.email == ""){
+      this.ngOnInit();
+    }
+
+  }
+
 
 }

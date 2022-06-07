@@ -1,0 +1,65 @@
+<div *ngIf="alert" class="alert alert-success" role="alert">
+    <div class="container">
+      <div class="alert-icon">
+        <i class="now-ui-icons ui-2_like"></i>
+      </div>
+      <strong>Module ajouté avec succès</strong>
+      <button (click)="closeAlert()"   type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">
+          <i class="now-ui-icons ui-1_simple-remove"></i>
+        </span>
+      </button>
+    </div>
+  </div>
+<br>
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group col-md-11">
+      <label>Nom Module</label>
+      <input type="text" class="form-control" id="nom" placeholder="Enter le nom" [(ngModel)]="module.nom" name="nom">
+    </div>
+    <div class="form-group col-md-11">
+        <label>Date Création </label>
+        <input type="date" class="form-control" id="date_creation" [(ngModel)]="module.date_creation" name="date_creation"  placeholder="Date de Création">
+    </div>  
+    <div class="input-group col-md-11">
+        <label class="input-group-text" for="inputGroupSelect01">Module Parent</label>
+        <select class="form-select" id="parentModule" [(ngModel)]="module.parentModule" name="parentModule">
+          <option value="null"  selected>Aucun Module Parent</option>
+          <option *ngFor="let m of mod | async " [ngValue]="m">
+                {{m.nom}}
+          </option>
+        </select>
+    </div>
+        <!-- <div class="container row">
+            <div class="col-md-6">
+                <input type="file" (change)="onFileChanged($event)">
+            </div>
+            <div class="col-md-6">
+                <input type="button" (click)="onUpload()" value="upload">
+            </div>
+        </div>
+        <hr />
+        <div class="container row">
+            <div class="col-md-12">
+                <div *ngIf=message>{{message}}</div>
+            </div>
+        </div> -->
+        <!-- <div class="container row"> 
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="name" placeholder="image name" [(ngModel)]="imageName"
+                    name="name" />
+            </div>
+            <div class="col-md-6">
+                <input type="button" (click)="getImage()" value="Get Image">
+            </div>
+        </div> -->
+        <!-- <div class="container row">
+            <div class="col-md-12">
+                <div *ngIf=retrievedImage>
+                    <img [src]="retrievedImage">
+                </div>
+            </div>
+        </div> -->
+    <button type="submit" class="btn btn-primary">Modifier</button>
+  </form>
+  

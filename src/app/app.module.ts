@@ -14,10 +14,20 @@ import { AppRoutes } from './app.routing';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { DemoComponent } from './pages/Demo/demo/demo.component';
 import { EditdemoComponent } from './pages/Demo/editdemo/editdemo.component';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from "@angular/forms";
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AddmoduleComponent } from './pages/Modules/addmodule/addmodule.component';
 import { ModulesComponent } from './pages/Modules/modules/modules.component';
+import { EditmoduleComponent } from './pages/Modules/editmodule/editmodule.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from "./auth/auth.guard";
+import { AuthInterceptor } from "./auth/auth.interceptor";
+import { UserService } from "./Services/user.service";
+import { PeriodePayementComponent } from './pages/periode-payement/periode-payement.component';
+import { PrixComponent } from './pages/prix/prix.component';
+import { ListPeriodePayementComponent } from './pages/periode-payement/list-periode-payement/list-periode-payement.component';
+import { ListPrixComponent } from './pages/prix/list-prix/list-prix.component';
+import { EditPrixComponent } from './pages/prix/edit-prix/edit-prix.component';
 
 
 
@@ -29,6 +39,14 @@ import { ModulesComponent } from './pages/Modules/modules/modules.component';
     EditdemoComponent,
     AddmoduleComponent,
     ModulesComponent,
+    EditmoduleComponent,
+    LoginComponent,
+    PeriodePayementComponent,
+    PrixComponent,
+    ListPeriodePayementComponent,
+    ListPrixComponent,
+    EditPrixComponent,
+    
   ],
   imports: [
     BrowserAnimationsModule,
@@ -41,10 +59,19 @@ import { ModulesComponent } from './pages/Modules/modules/modules.component';
     FooterModule,
     FixedPluginModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
 
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi:true
+    },
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

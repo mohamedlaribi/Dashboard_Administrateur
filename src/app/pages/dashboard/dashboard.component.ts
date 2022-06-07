@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserAuthService } from 'app/Services/user-auth.service';
 import Chart from 'chart.js';
 
 
@@ -9,6 +11,9 @@ import Chart from 'chart.js';
 })
 
 export class DashboardComponent implements OnInit{
+  constructor(     
+    private userAuthService : UserAuthService,
+    private router : Router) {}
 
   public canvas : any;
   public ctx;
@@ -206,4 +211,9 @@ export class DashboardComponent implements OnInit{
         options: chartOptions
       });
     }
+    public logout(){
+      this.userAuthService.clear();
+      this.router.navigate(['/login']);
+  }
 }
+

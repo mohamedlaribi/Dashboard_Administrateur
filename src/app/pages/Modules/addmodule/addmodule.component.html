@@ -1,85 +1,91 @@
-<div *ngIf="alert" class="alert alert-success" role="alert">
+<!-- <div *ngIf="alert" class="alert alert-success" role="alert">
     <div class="container">
-      <div class="alert-icon">
-        <i class="now-ui-icons ui-2_like"></i>
-      </div>
-      <strong>Module ajouté avec succès</strong>
-      <button (click)="closeAlert()"   type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">
-          <i class="now-ui-icons ui-1_simple-remove"></i>
-        </span>
-      </button>
+        <div class="alert-icon">
+            <i class="now-ui-icons ui-2_like"></i>
+        </div>
+        <strong>Module ajouté avec succès</strong>
+        <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">
+                <i class="now-ui-icons ui-1_simple-remove"></i>
+            </span>
+        </button>
     </div>
-  </div>
-
+</div>
+<br>
 <form (ngSubmit)="onSubmit()">
     <div class="form-group col-md-11">
-      <label>Nom Module</label>
-      <input type="text" class="form-control" id="nom" placeholder="Enter le nom" [(ngModel)]="module.nom" name="nom">
+        <label>Nom Module</label>
+        <input type="text" class="form-control" id="nom" placeholder="Enter le nom" [(ngModel)]="module.nom" name="nom">
     </div>
     <div class="form-group col-md-11">
-      <label>Prix Mensuelle</label>
-      <input type="text" class="form-control" id="prix_mensuel" [(ngModel)]="module.prix_mensuel" name="prix_mensuel" placeholder="Prix Mensuelle">
-    </div>
-    <div class="form-group col-md-11">
-        <label>Prix Trimestriel</label>
-        <input type="text" class="form-control" id="prix_trimestriel" [(ngModel)]="module.prix_trimestriel" name="prix_trimestriel"  placeholder="Prix Trimestriel">
-    </div>
-    <div class="form-group col-md-11">
-        <label>Prix Semestriel</label>
-        <input type="text" class="form-control" id="prix_semestriel" [(ngModel)]="module.prix_semestriel" name="prix_semestriel" placeholder="Prix Semestriel">
-    </div>
-    <div class="form-group col-md-11">
-        <label>Prix Annuel</label>
-        <input type="text" class="form-control" id="prix_annuel"  [(ngModel)]="module.prix_annuel" name="prix_annuel" placeholder="Prix Annuel">
-    </div>
-    <div class="form-group col-md-11">
-        <label>Prix Forfaitaire </label>
-        <input type="text" class="form-control" id="prix_forfaitaire" [(ngModel)]="module.prix_forfaitaire" name="prix_forfaitaire"  placeholder="Prix forfaitaire ">
+        <label>Description</label>
+        <input type="text" class="form-control" id="description" placeholder="Enter la description du Module"
+            [(ngModel)]="module.description" name="description">
     </div>
     <div class="form-group col-md-11">
         <label>Date Création </label>
-        <input type="date" class="form-control" id="date_creation" [(ngModel)]="module.date_creation" name="date_creation"  placeholder="Date de Création">
-    </div>  
+        <input type="date" class="form-control" id="date_creation" [(ngModel)]="module.date_creation"
+            name="date_creation" placeholder="Date de Création">
+    </div>
     <div class="input-group col-md-11">
         <label class="input-group-text" for="inputGroupSelect01">Module Parent</label>
-        <select class="form-select" id="idmodule" [(ngModel)]="module.parentModule" name="parentModule">
-          <option value="null"  selected>Aucun Module Parent</option>
-          <option *ngFor="let m of modules | async " [value]="m.idmodule" >
+        <select class="form-select" id="parentModule" [(ngModel)]="module.parentModule" name="parentModule">
+            <option value="null" selected>Aucun Module Parent</option>
+            <option *ngFor="let m of modules | async " [ngValue]="m">
                 {{m.nom}}
-          </option>
+            </option>
         </select>
     </div>
-        <!-- <div class="container row">
-            <div class="col-md-6">
-                <input type="file" (change)="onFileChanged($event)">
-            </div>
-            <div class="col-md-6">
-                <input type="button" (click)="onUpload()" value="upload">
-            </div>
-        </div>
-        <hr />
-        <div class="container row">
-            <div class="col-md-12">
-                <div *ngIf=message>{{message}}</div>
-            </div>
-        </div> -->
-        <!-- <div class="container row"> 
-            <div class="col-md-6">
-                <input type="text" class="form-control" id="name" placeholder="image name" [(ngModel)]="imageName"
-                    name="name" />
-            </div>
-            <div class="col-md-6">
-                <input type="button" (click)="getImage()" value="Get Image">
-            </div>
-        </div> -->
-        <!-- <div class="container row">
-            <div class="col-md-12">
-                <div *ngIf=retrievedImage>
-                    <img [src]="retrievedImage">
-                </div>
-            </div>
-        </div> -->
+
     <button type="submit" class="btn btn-primary">Sauvgarder</button>
-  </form>
-  
+</form> -->
+<div class="col-md">
+    <div class="card card-user">
+        <div class="card-header">
+           <h5 class="card-title">Ajouter un Module</h5> 
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Nom Module :</label>
+                            <input type="text" class="form-control" id="nom" placeholder="Enter le nom" [(ngModel)]="module.nom" name="nom">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Description :</label>
+                            <input type="text" class="form-control"  id="description" placeholder="Enter la description du Module"
+                            [(ngModel)]="module.description" name="description">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Date Création :</label>
+                            <input type="date" class="form-control"  d="date_creation" [(ngModel)]="module.date_creation"
+                            name="date_creation" placeholder="Date de Création">
+                        </div>
+                    </div>
+                    <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                            <label class="input-group-text col-md-6">Veuillez la periode de payement :</label>
+                            <select class="form-select col-md-6" id="parentModule" [(ngModel)]="module.parentModule" name="parentModule">
+                                <option value="null" selected>Choisir une periode </option>
+                                <option *ngFor="let m of modules | async " [ngValue]="m">
+                                    {{m.nom}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="update ml-auto mr-auto">
+                        <button type="submit" class="btn btn-primary btn-round">Ajouter</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

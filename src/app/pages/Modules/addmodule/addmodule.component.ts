@@ -16,6 +16,8 @@ export class AddmoduleComponent implements OnInit {
   modules: Observable<Modules[]>;
   
 
+
+
   constructor(private moduleservice : ModulesService,
     private router : Router) { }
 
@@ -27,15 +29,21 @@ export class AddmoduleComponent implements OnInit {
   {
     this.moduleservice.createModule(this.module).subscribe(data =>{
       console.log(data);
+     // console.log(this.module.parentModule.idmodule);
     },
     error => console.error(error));
-    this.alert=true
   }
 
   onSubmit()
   {
     console.log(this.module);
     this.persistModule();
+    this.gotoDemo();
+
+  }
+  gotoDemo()
+  {
+    this.router.navigate(['/allmodules'])
   }
 
 }

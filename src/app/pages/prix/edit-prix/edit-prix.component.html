@@ -1,0 +1,65 @@
+<div class="col-md">
+    <div class="card card-user">
+        <div class="card-header">
+           <h5 class="card-title">Modifier le paramétrage de prix</h5> 
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="input-group col-md-12">
+                        <label class="input-group-text col-md-4">Veuillez choisir un module :</label>
+                        <select class="form-select col-md-4" id="module"  [(ngModel)]="prix.module" name="module" required>
+                            <option value="null" selected>Choisir un module</option>
+                            <option *ngFor="let m of modules | async" [ngValue]="m">
+                                {{m.nom}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="input-group col-md-12">
+                        <label class="input-group-text col-md-4">Veuillez la periode de payement :</label>
+                        <select class="form-select col-md-4" id="periodepayement" [(ngModel)]="prix.periodepayement" name="periodepayement" required>
+                            <option value="null" selected>Choisir une periode </option>
+                            <option *ngFor="let p of payement | async" [ngValue]="p">
+                                {{p.libelle}}
+                            </option>
+                        </select>
+                        <div class="col">
+                            <div class="form-group">
+                                <!-- <label>Periode de Payement</label> -->
+                                <button type="button" class="btn btn-info"  (click)="onAddPayement()">
+                                    <i class="nc-icon nc-simple-add"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <a class="nav-link" [routerLink]="['/periode-payement']" >
+                            Gérer les Periodes de Payement
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                            <label>Prix :</label>
+                            <input type="text" class="form-control" id="prix" [(ngModel)]="prix.prix" placeholder="Prix" name="prix" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                        <div class="form-group">
+                            <label>Date d'effet</label>
+                            <input type="date" class="form-control" id="dateEffet" [(ngModel)]="prix.dateEffet" placeholder="Date d'effet " name="dateEffet">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="update ml-auto mr-auto">
+                        <button type="submit" class="btn btn-primary btn-round">Modifier</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
