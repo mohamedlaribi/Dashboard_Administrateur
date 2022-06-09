@@ -69,7 +69,7 @@
                     </div>
                     <div class="col-md-6 pr-1">
                         <div class="form-group">
-                            <label class="input-group-text col-md-6">Veuillez la periode de payement :</label>
+                            <label class="input-group-text col-md-6">Veuillez choisir le module Parent :</label>
                             <select class="form-select col-md-6" id="parentModule" [(ngModel)]="module.parentModule" name="parentModule">
                                 <option value="null" selected>Choisir une periode </option>
                                 <option *ngFor="let m of modules | async " [ngValue]="m">

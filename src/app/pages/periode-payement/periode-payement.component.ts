@@ -34,7 +34,6 @@ export class PeriodePayementComponent implements OnInit {
     },
     error => console.error(error));
   }
-
   onSubmit()
   {
     this.persistPpayement()

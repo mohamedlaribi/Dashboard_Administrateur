@@ -1,26 +1,94 @@
-<div class="container">
+<!-- <div class="container">
   <h3>MODIFIER DEMONSTRATION</h3>
-    <form (ngSubmit)="onSubmit() ">
-        <div class="form-group">
-          <label>Nom</label>
-          <input type="text" class="form-control" id="nom"[(ngModel)]="demo.nom" name="nom" placeholder="Nom" required>
+  <form (ngSubmit)="onSubmit() ">
+    <div class="form-group">
+      <label>Nom</label>
+      <input type="text" class="form-control" id="nom" [(ngModel)]="demo.nom" name="nom" placeholder="Nom" required>
+    </div>
+    <div class="form-group">
+      <label>Prénom</label>
+      <input type="text" class="form-control" id="prenom" [(ngModel)]="demo.prenom" name="prenom" placeholder="Prénom"
+        required>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="demo.email" name="email" placeholder="Email"
+        required>
+    </div>
+    <div class="form-group">
+      <label>Numéro Téléphone</label>
+      <input type="text" class="form-control" id="numtel" [(ngModel)]="demo.numtel" name="numtel"
+        placeholder="Numéro Téléphone" required>
+    </div>
+    <div class="form-group">
+      <label>Sociéte</label>
+      <input type="text" class="form-control" id="societe" [(ngModel)]="demo.societe" name="societe"
+        placeholder="Sociéte" required>
+    </div>
+    <button type="submit" class="btn btn-danger">Modifier</button>
+  </form>
+</div> -->
+
+
+
+<div class="col-md">
+  <div class="card card-user">
+    <div class="card-header">
+      <h5 class="card-title">MODIFIER DEMONSTRATION</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Nom</label>
+              <input type="text" class="form-control" id="nom" [(ngModel)]="demo.nom" name="nom" placeholder="Nom"
+                required
+                disabled>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Prénom</label>
+              <input type="text" class="form-control" id="prenom" [(ngModel)]="demo.prenom" name="prenom"
+                placeholder="Prénom" required disabled>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" id="email" [(ngModel)]="demo.email" name="email"
+                placeholder="Email" required disabled>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Numéro Téléphone</label>
+              <input type="text" class="form-control" id="numtel" [(ngModel)]="demo.numtel" name="numtel"
+                placeholder="Numéro Téléphone" required disabled>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Sociéte</label>
+              <input type="text" class="form-control" id="societe" [(ngModel)]="demo.societe" name="societe"
+                placeholder="Sociéte" required disabled>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Commenter </label>
+              <input type="text" class="form-control" id="etat" [(ngModel)]="demo.etat" name="etat"
+                placeholder="Sociéte" required >
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label>Prénom</label>
-          <input type="text" class="form-control" id="prenom"[(ngModel)]="demo.prenom" name="prenom" placeholder="Prénom"  required>
+        <div class="row">
+          <div class="update ml-auto mr-auto">
+            <button type="submit" class="btn btn-primary btn-round">Ajouter</button>
+          </div>
         </div>
-        <div class="form-group">
-            <label >Email</label>
-            <input type="email" class="form-control" id="email"[(ngModel)]="demo.email" name="email" placeholder="Email"   required>
-        </div>
-        <div class="form-group">
-            <label >Numéro Téléphone</label>
-            <input type="text" class="form-control" id="numtel"[(ngModel)]="demo.numtel" name="numtel" placeholder="Numéro Téléphone"   required>
-        </div>
-        <div class="form-group">
-            <label >Sociéte</label>
-            <input type="text" class="form-control" id="societe"[(ngModel)]="demo.societe" name="societe" placeholder="Sociéte"  required>
-        </div>
-        <button type="submit" class="btn btn-danger">Modifier</button>
       </form>
+    </div>
+  </div>
 </div>

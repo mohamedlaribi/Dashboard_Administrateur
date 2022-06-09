@@ -5,4 +5,5 @@ export class Demo {
     email : string;
     numtel : string; 
     societe : string; 
+    etat : string;
 }

@@ -28,6 +28,7 @@ import { PrixComponent } from './pages/prix/prix.component';
 import { ListPeriodePayementComponent } from './pages/periode-payement/list-periode-payement/list-periode-payement.component';
 import { ListPrixComponent } from './pages/prix/list-prix/list-prix.component';
 import { EditPrixComponent } from './pages/prix/edit-prix/edit-prix.component';
+import { EditperiodeComponent } from './pages/periode-payement/editperiode/editperiode.component';
 
 
 
@@ -46,6 +47,7 @@ import { EditPrixComponent } from './pages/prix/edit-prix/edit-prix.component';
     ListPeriodePayementComponent,
     ListPrixComponent,
     EditPrixComponent,
+    EditperiodeComponent,
     
   ],
   imports: [

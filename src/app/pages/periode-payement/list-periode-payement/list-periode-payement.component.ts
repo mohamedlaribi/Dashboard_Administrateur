@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PeriodePayement } from 'app/Classes/periode-payement';
 import { PeriodePayementService } from 'app/Services/periode-payement.service';
 
@@ -12,14 +13,12 @@ export class ListPeriodePayementComponent implements OnInit {
   ListPeriodePayement : PeriodePayement[];
   periode : string 
 
-  constructor(private periodepayementServie : PeriodePayementService) { }  
-  
-
+  constructor(private periodepayementServie : PeriodePayementService,
+    private router: Router) { }  
 
   ngOnInit(): void {
     this.getListPeriodePayement();
   }
-
 
   getListPeriodePayement()
   {
@@ -35,7 +34,18 @@ export class ListPeriodePayementComponent implements OnInit {
     }else if(this.periode == ""){
       this.ngOnInit();
     }
-
   }
 
+  delete(idPeriodePayement: number)
+  {
+    this.periodepayementServie.delete(idPeriodePayement)
+    .subscribe(data =>{
+      console.log(data)
+      this.getListPeriodePayement()
+    })
+  }
+  
+  updatep(idPeriodePayement : number){
+    this.router.navigate(['edit-periode',idPeriodePayement]);
+  }
 }

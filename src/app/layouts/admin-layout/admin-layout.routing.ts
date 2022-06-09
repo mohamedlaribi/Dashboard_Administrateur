@@ -39,7 +39,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'addmodule',      component: AddmoduleComponent,canActivate:[AuthGuard],data:{roles:['Admin']}},
     { path: 'allmodules',     component:ModulesComponent,canActivate:[AuthGuard],data:{roles:['Admin']}},
     { path: 'editmodule/:idmodule',component: EditmoduleComponent,canActivate:[AuthGuard],data:{roles:['Admin']}},
-    { path:  'list-periode-payement' , component: ListPeriodePayementComponent,canActivate:[AuthGuard],data:{roles:['Admin']}},
+    { path: 'list-periode-payement' , component: ListPeriodePayementComponent,canActivate:[AuthGuard],data:{roles:['Admin']}},
     { path: 'list-prix', component:ListPrixComponent,canActivate:[AuthGuard],data:{roles:['Admin']}},
-    { path:  'edit-prix/:idPrix',component: EditPrixComponent,canActivate:[AuthGuard],data:{roles:['Admin']}}
+    { path: 'edit-prix/:idPrix',component: EditPrixComponent,canActivate:[AuthGuard],data:{roles:['Admin']}},
+    { path: 'edit-periode/:idPeriodePayement', component: PeriodePayementComponent,canActivate:[AuthGuard],data:{roles:['Admin']}}
 ];

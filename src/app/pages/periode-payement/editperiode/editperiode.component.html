@@ -1,0 +1,30 @@
+<div class="col-md">
+    <div class="card card-user">
+        <div class="card-header">
+            <!-- <h5 class="card-title">Edit Profile</h5> -->
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>libellé :</label>
+                            <input type="text" class="form-control" id="libelle" [(ngModel)]="ppayement.libelle" placeholder="Veuillez introduire le libellé" name="libelle" required>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Periode (en mois) :</label>
+                            <input type="number" class="form-control" id="" [(ngModel)]="ppayement.periode" placeholder="Veuillez introduire la période en moins" name="periode" required min="1" max="12">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="update ml-auto mr-auto">
+                        <button type="submit" class="btn btn-primary btn-round">Modifier</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
