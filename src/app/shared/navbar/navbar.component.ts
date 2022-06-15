@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/co
 import { ROUTES } from '../../sidebar/sidebar.component';
 import { Router } from '@angular/router';
 import { Location} from '@angular/common';
+import { UserAuthService } from 'app/Services/user-auth.service';
 
 @Component({
     moduleId: module.id,
@@ -19,7 +20,8 @@ export class NavbarComponent implements OnInit{
     public isCollapsed = true;
     @ViewChild("navbar-cmp", {static: false}) button;
 
-    constructor(location:Location, private renderer : Renderer2, private element : ElementRef, private router: Router) {
+    constructor(location:Location, private renderer : Renderer2, private element : ElementRef,
+      private userAuthService : UserAuthService, private router: Router) {
         this.location = location;
         this.nativeElement = element.nativeElement;
         this.sidebarVisible = false;
@@ -91,5 +93,12 @@ export class NavbarComponent implements OnInit{
         }
 
       }
-
+      public  isLoggedIn(){
+        return this.userAuthService.isLoggedIn();
+    }
+    
+    public logout(){
+        this.userAuthService.clear();
+        this.router.navigate(['/']);
+    }
 }

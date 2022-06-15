@@ -29,9 +29,13 @@ import { ListPeriodePayementComponent } from './pages/periode-payement/list-peri
 import { ListPrixComponent } from './pages/prix/list-prix/list-prix.component';
 import { EditPrixComponent } from './pages/prix/edit-prix/edit-prix.component';
 import { EditperiodeComponent } from './pages/periode-payement/editperiode/editperiode.component';
+import { ForbiddenComponent } from './pages/forbidden/forbidden.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
 
-
-
+import { ConfirmDialogComponent } from "./pages/confirm-dialog/confirm-dialog.component";
+import { AchatsComponent } from './pages/achats/achats.component';
+import { DevisComponent } from './pages/devis/devis.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +51,12 @@ import { EditperiodeComponent } from './pages/periode-payement/editperiode/editp
     ListPeriodePayementComponent,
     ListPrixComponent,
     EditPrixComponent,
+    ConfirmDialogComponent,
     EditperiodeComponent,
+    ForbiddenComponent,
+    AchatsComponent,
+    DevisComponent,
+
     
   ],
   imports: [
@@ -63,6 +72,9 @@ import { EditperiodeComponent } from './pages/periode-payement/editperiode/editp
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    MatIconModule
+
 
   ],
   providers: [
@@ -75,5 +87,6 @@ import { EditperiodeComponent } from './pages/periode-payement/editperiode/editp
     UserService
   ],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }

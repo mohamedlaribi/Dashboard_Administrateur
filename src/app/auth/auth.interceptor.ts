@@ -19,7 +19,6 @@ export class AuthInterceptor implements HttpInterceptor{
         if(req.headers.get("No-Auth")==="True"){
             return next.handle(req.clone());
         }
-
         const token = this.userAuthService.getToken();
         req = this.addtoken(req,token);
         return next.handle(req).pipe(
@@ -29,14 +28,13 @@ export class AuthInterceptor implements HttpInterceptor{
                     if(err.status === 401){
                         this.router.navigate(['/login']);
                     }else if(err.status === 403){
-                        this.router.navigate(['/'])
+                        this.router.navigate(['/acces-interdit'])
                     }
                     return throwError("Some thing is wrong");
                 }
             )
         );
     }
-    
     private addtoken(request : HttpRequest<any>,token:string){
         return request.clone(
             {

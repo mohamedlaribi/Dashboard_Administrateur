@@ -32,11 +32,12 @@ export class LoginComponent implements OnInit {
         if(role == 'Admin'){
             this.router.navigate(['/dashboard']);
         }else{
-            this.router.navigate(['/']);
+            this.router.navigate(['/login']);
         }
       },
       (error)=>{
         console.log(error);
+        alert("Vous devez verifier les access")
        }
     );
   }
